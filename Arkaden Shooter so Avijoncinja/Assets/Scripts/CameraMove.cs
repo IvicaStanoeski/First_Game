@@ -7,7 +7,7 @@ public class CameraMove : MonoBehaviour {
     float speed = 0.2f;
     float counter = 0f;
     float limit = 1000000f;
-    
+   
     // Use this for initialization
     void Start () {
      

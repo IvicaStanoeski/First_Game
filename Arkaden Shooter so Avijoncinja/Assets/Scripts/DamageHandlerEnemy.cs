@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageHandlerEnemy : MonoBehaviour {
     
-    int EnemyHealth = 1;
+    int EnemyHealth = 5;
 
     // Use this for initialization
     void Start()

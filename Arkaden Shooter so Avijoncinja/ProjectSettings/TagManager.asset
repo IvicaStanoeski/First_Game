@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ' EasyEnemy'
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
