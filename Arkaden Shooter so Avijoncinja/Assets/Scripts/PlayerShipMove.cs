@@ -19,8 +19,8 @@ public class PlayerShipMove : MonoBehaviour {
         {
 
         Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        pos.x = Mathf.Clamp01(pos.x );
-        pos.y = Mathf.Clamp01(pos.y );
+        pos.x = Mathf.Clamp(pos.x, 0.03f , 0.97f);
+        pos.y = Mathf.Clamp(pos.y, 0.06f , 0.94f );
         transform.position = Camera.main.ViewportToWorldPoint(pos);
 
         if (counter < limit)
