@@ -23,24 +23,24 @@ public class PlayerShipMove : MonoBehaviour {
         pos.y = Mathf.Clamp(pos.y, 0.06f , 0.94f );
         transform.position = Camera.main.ViewportToWorldPoint(pos);
 
-        if (counter < limit)
+        if ((counter < limit) && DamageHandlerPlayer.StopMove)
             {
                 transform.Translate(Vector3.up * speed * Time.deltaTime);
                 counter++;
             }
-            if (Input.GetKey(key: KeyCode.W))
+            if (Input.GetKey(key: KeyCode.W) && DamageHandlerPlayer.StopMove)
             {
                 transform.Translate(Vector3.up * (speed + 2f) * Time.deltaTime);
             }
-            if (Input.GetKey(key: KeyCode.S))
+            if (Input.GetKey(key: KeyCode.S) && DamageHandlerPlayer.StopMove)
             {
                 transform.Translate(Vector3.down * (speed + 2f) * Time.deltaTime);
             }
-            if (Input.GetKey(key: KeyCode.A))
+            if (Input.GetKey(key: KeyCode.A) && DamageHandlerPlayer.StopMove)
             {
                 transform.Translate(Vector3.left * (speed + 2f) * Time.deltaTime);
             }
-            if (Input.GetKey(key: KeyCode.D))
+            if (Input.GetKey(key: KeyCode.D) && DamageHandlerPlayer.StopMove)
             {
                 transform.Translate(Vector3.right * (speed + 2f) * Time.deltaTime);
             }

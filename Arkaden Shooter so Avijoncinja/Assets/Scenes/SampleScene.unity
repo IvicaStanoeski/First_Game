@@ -3135,6 +3135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shield: {fileID: 503282522}
+  Explosion: {fileID: 1986357424862816, guid: 102d195aa95ff1b44a3c1d70b4470ccd, type: 2}
 --- !u!114 &2027420130
 MonoBehaviour:
   m_ObjectHideFlags: 0
