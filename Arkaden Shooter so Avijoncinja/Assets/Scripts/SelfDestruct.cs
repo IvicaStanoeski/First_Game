@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelfDestruct : MonoBehaviour {
-    float timer = 3f;
+    float timer = 4f;
 	// Use this for initialization
 	void Start () {
 		

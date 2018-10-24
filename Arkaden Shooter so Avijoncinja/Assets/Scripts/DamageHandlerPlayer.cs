@@ -10,6 +10,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
     public GameObject Explosion1;
     public GameObject Explosion2;
     static public bool StopMove = true;
+    
     // Use this for initialization
     void Start () {
             
@@ -31,11 +32,12 @@ public class DamageHandlerPlayer : MonoBehaviour {
 
     void OnTriggerEnter2D()
     {
-            
+            gameObject.layer = 10;
             PlayerHealth--;
             StartCoroutine(Explode());
-            StartCoroutine(Respawn());         
-
+            StartCoroutine(Respawn());
+            
+        
     }
 
     private IEnumerator Explode() {
@@ -54,10 +56,12 @@ public class DamageHandlerPlayer : MonoBehaviour {
     private IEnumerator Respawn() {
 
         StopMove = false;
+        Shooting.StopShoot = false;
         yield return new WaitForSeconds(1.8f);
         Vector3 RespawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint").transform.position;
         gameObject.transform.position = RespawnPoint;
         StopMove = true;
+        Shooting.StopShoot = true;
         gameObject.layer = 10;
         shield.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -77,6 +81,9 @@ public class DamageHandlerPlayer : MonoBehaviour {
         gameObject.layer = 8;
 
     }
+
     
+
 }
+
 

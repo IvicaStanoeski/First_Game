@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour {
     float delay = 0.25f;
     float cooldownTimer = 0;
     public GameObject  BulletPrefab;
+    static public bool StopShoot = true;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +19,7 @@ public class Shooting : MonoBehaviour {
         Vector3 OffsetLeft = new Vector3(-0.15f, 0, 0);
         Vector3 OffsetRight = new Vector3(0.15f, 0, 0);
         cooldownTimer -= Time.deltaTime;
-        if (Input.GetKey(key: KeyCode.T) && cooldownTimer <= 0) {
+        if (Input.GetKey(key: KeyCode.T) && cooldownTimer <= 0 && StopShoot) {
             
             cooldownTimer = delay;
 
