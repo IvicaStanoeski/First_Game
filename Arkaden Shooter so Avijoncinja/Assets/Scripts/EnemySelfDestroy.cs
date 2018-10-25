@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBulletMove : MonoBehaviour {
+public class EnemySelfDestroy : MonoBehaviour {
 
+    float timer = 8f;
     // Use this for initialization
     void Start()
     {
@@ -13,9 +14,11 @@ public class EnemyBulletMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        Vector3 velocity = new Vector3(0, -2f * Time.deltaTime, 0);
-        pos += velocity;
-        transform.position = pos;
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ' EasyEnemy'
   - SpawnPoint
+  - EndPoint
   layers:
   - Default
   - TransparentFX
