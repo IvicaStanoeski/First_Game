@@ -8,6 +8,7 @@ public class SpawnEnemies : MonoBehaviour {
     public GameObject Enemy;
     float delay = 7f;
     float cooldownTimer = 0;
+    public Sprite[] EnemySprites;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +20,10 @@ public class SpawnEnemies : MonoBehaviour {
         cooldownTimer -= Time.deltaTime;
         if (cooldownTimer <= 0)
         {
-            Instantiate(Enemy, transform.position, transform.rotation);
+            GameObject Clone;
+            Clone = Instantiate(Enemy, transform.position, transform.rotation);
+            int i = Random.Range(0,EnemySprites.Length);
+            Clone.GetComponent<SpriteRenderer>().sprite = EnemySprites[i];
             cooldownTimer = delay;
         }
 

@@ -10,7 +10,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
     public GameObject Explosion1;
     public GameObject Explosion2;
     static public bool StopMove = true;
-    
+    static public bool RemoveClamp = false;
     // Use this for initialization
     void Start () {
             
@@ -43,6 +43,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
     private IEnumerator Explode() {
             Vector3 offset1 = new Vector3(0.2f,0.15f,0);
             Vector3 offset2 = new Vector3(-0.2f, -0.2f, 0);
+            RemoveClamp = true;
             GameObject CloneExplosion = Instantiate(Explosion, transform.position, transform.rotation);
             Destroy(CloneExplosion, 1.8f);
             yield return new WaitForSeconds(0.5f);

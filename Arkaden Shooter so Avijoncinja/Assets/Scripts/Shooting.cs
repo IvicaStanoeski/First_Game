@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
-    float delay = 0.25f;
+    float delay = 0.2f;
     float cooldownTimer = 0;
     public GameObject  BulletPrefab;
     static public bool StopShoot = true;

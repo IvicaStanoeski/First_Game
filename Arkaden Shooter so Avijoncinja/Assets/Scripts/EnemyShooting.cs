@@ -19,7 +19,7 @@ public class EnemyShooting : MonoBehaviour {
     {
         LayerMask mask = LayerMask.GetMask("EnemyShootOrNot");
         RaycastHit2D ShootOrNot = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 5f, mask);
-        Vector3 Offset = new Vector3(0, -0.2f, 0);
+        Vector3 Offset = new Vector3(0, -0.3f, 0);
         
         cooldownTimer -= Time.deltaTime;
         if ( cooldownTimer <= 0 && StopShoot && ShootOrNot.collider == true)
