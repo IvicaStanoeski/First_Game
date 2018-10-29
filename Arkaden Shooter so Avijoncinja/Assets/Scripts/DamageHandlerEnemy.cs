@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageHandlerEnemy : MonoBehaviour {
     
-    int EnemyHealth = 5;
+    public int EnemyHealth = 5;
     public GameObject Explosion;
     public GameObject Explosion1;
     public GameObject Explosion2;

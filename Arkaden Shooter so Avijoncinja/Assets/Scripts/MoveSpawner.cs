@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class MoveSpawner : MonoBehaviour {
 
-    float speed = 0.2f;
-    float sideSpeed = 1f;
-    //string LeftOrRight = "Left";
+    public float speed = 0.1f;
+    public float sideSpeed = 1f;
     Vector3 LeftOrRight = Vector3.left;
     // Use this for initialization
     void Start () {

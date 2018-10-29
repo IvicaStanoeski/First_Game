@@ -11,6 +11,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
     public GameObject Explosion2;
     static public bool StopMove = true;
     static public bool RemoveClamp = false;
+    bool PlayerHit = false;
     // Use this for initialization
     void Start () {
             
@@ -19,7 +20,10 @@ public class DamageHandlerPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-      
+        if (PlayerHit) {
+            PlayerHealth--;
+            PlayerHit = false;
+        }
 
         if (PlayerHealth <= 0)
         {
@@ -33,7 +37,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
     void OnTriggerEnter2D()
     {
             gameObject.layer = 10;
-            PlayerHealth--;
+            PlayerHit = true;
             StartCoroutine(Explode());
             StartCoroutine(Respawn());
             
@@ -41,8 +45,8 @@ public class DamageHandlerPlayer : MonoBehaviour {
     }
 
     private IEnumerator Explode() {
-            Vector3 offset1 = new Vector3(0.2f,0.15f,0);
-            Vector3 offset2 = new Vector3(-0.2f, -0.2f, 0);
+            Vector3 offset1 = new Vector3(0.27f,0.18f,0);
+            Vector3 offset2 = new Vector3(-0.23f, -0.23f, 0);
             RemoveClamp = true;
             GameObject CloneExplosion = Instantiate(Explosion, transform.position, transform.rotation);
             Destroy(CloneExplosion, 1.8f);
@@ -52,10 +56,12 @@ public class DamageHandlerPlayer : MonoBehaviour {
             yield return new WaitForSeconds(0.5f);
             GameObject CloneExplosion2 = Instantiate(Explosion2, transform.position + offset2, transform.rotation);
             Destroy(CloneExplosion2, 0.8f);
+            
     }
   
     private IEnumerator Respawn() {
 
+        
         StopMove = false;
         Shooting.StopShoot = false;
         yield return new WaitForSeconds(1.8f);
@@ -63,6 +69,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
         gameObject.transform.position = RespawnPoint;
         StopMove = true;
         Shooting.StopShoot = true;
+        RemoveClamp = false;
         gameObject.layer = 10;
         shield.SetActive(true);
         yield return new WaitForSeconds(0.5f);

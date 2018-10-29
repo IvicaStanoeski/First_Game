@@ -5,7 +5,7 @@ using UnityEngine;
 public class DamageHandlerLasers : MonoBehaviour {
 
     int bulletHealth = 1;
-
+    public static string Missile;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,11 +15,13 @@ public class DamageHandlerLasers : MonoBehaviour {
 	void Update () {
         if (bulletHealth <= 0) {
             Destroy(gameObject);
+            Missile = gameObject.name;
         }
 	}
 
     private void OnTriggerEnter2D()
     {
         bulletHealth--;
+        
     }
 }

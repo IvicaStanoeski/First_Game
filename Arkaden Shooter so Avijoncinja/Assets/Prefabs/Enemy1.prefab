@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114408515154455566}
   - component: {fileID: 60355291953215296}
   m_Layer: 9
-  m_Name: Enemy1 1
+  m_Name: Enemy1
   m_TagString: ' EasyEnemy'
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8353cf12a10b1754a98fa6657a2515c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Explosion: {fileID: 1986357424862816, guid: 102d195aa95ff1b44a3c1d70b4470ccd, type: 2}
+  EnemyHealth: 5
+  Explosion: {fileID: 1902478472903720, guid: 413fa655c4339e440aec41c7140556d6, type: 2}
   Explosion1: {fileID: 1584193536378352, guid: eda93551808c6e64eae353add8dba0c7, type: 2}
   Explosion2: {fileID: 1892383790075988, guid: d3f1c6778e6bf474183db75efe0fcdc8, type: 2}
 --- !u!114 &114389785121605218
