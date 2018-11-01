@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpecialSelfDestruct : MonoBehaviour {
-    public float timer = 4f;
+    public float timer = 5f;
     public GameObject Explosion;
     bool RunOnce = true;
     public static bool StopMove = false;
@@ -25,12 +25,13 @@ public class SpecialSelfDestruct : MonoBehaviour {
             }
             
         }
+        
     }
 
     private IEnumerator Explode()
     {
         
-        StopMove = true;       
+        StopMove = true;    
         GameObject CloneExplosion = Instantiate(Explosion, transform.position, transform.rotation);
         yield return new WaitForSeconds(0.5f);
         Destroy(CloneExplosion);

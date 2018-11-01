@@ -6,7 +6,7 @@ public class CameraMove : MonoBehaviour {
 
     float speed = 0.2f;
     float counter = 0f;
-    float limit = 1000000f;
+    float limit = 7600f;
    
     // Use this for initialization
     void Start () {
@@ -19,6 +19,7 @@ public class CameraMove : MonoBehaviour {
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             counter++;
+            
         }
        
 

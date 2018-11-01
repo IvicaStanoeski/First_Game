@@ -6,7 +6,7 @@ public class PlayerShipMove : MonoBehaviour {
 
     float speed = 0.2f;
     float counter = 0f;
-    float limit = 1000000f;
+    float limit = 7600f;
     
 
     void Start()
