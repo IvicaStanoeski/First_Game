@@ -11,6 +11,7 @@ public class DamageHandlerEnemy : MonoBehaviour {
     bool RunOnce = true;
     public static string EnemyName;
     public static bool StopMove = true;
+    public int ScoreEncrease;
     
     // Use this for initialization
     void Start()
@@ -26,13 +27,13 @@ public class DamageHandlerEnemy : MonoBehaviour {
 
         if (EnemyHealth <= 0)
         {
-             EnemyName = gameObject.name;
+            EnemyName = gameObject.name;
             
             EnemyShooting.StopShoot = false;
             if (RunOnce)
             {
                 StartCoroutine(Explode());
-                
+                ScoreBoard.Score += ScoreEncrease;
             }
                RunOnce = false;
         }
@@ -46,7 +47,7 @@ public class DamageHandlerEnemy : MonoBehaviour {
     void OnTriggerEnter2D()
     {
         EnemyHealth--;
-                 
+        
     }
 
     private IEnumerator Explode()

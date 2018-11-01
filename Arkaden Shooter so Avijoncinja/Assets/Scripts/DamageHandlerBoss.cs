@@ -37,7 +37,7 @@ public class DamageHandlerBoss : MonoBehaviour {
             if (RunOnce)
             {
                 StartCoroutine(Explode());
-
+                ScoreBoard.Score += 1000;
             }
             RunOnce = false;
 

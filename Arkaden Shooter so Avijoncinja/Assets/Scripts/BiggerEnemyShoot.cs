@@ -30,8 +30,12 @@ public class BiggerEnemyShoot : MonoBehaviour {
         Vector3 OffsetMissile = new Vector3(0, -0.41f, 0);
         cooldownTimer -= Time.deltaTime;
         cooldownTimerMissile -= Time.deltaTime;
+        gameObject.layer = 10;
 
         if (ShootOrNot.collider == true) {
+
+            gameObject.layer = 9;
+
             if (cooldownTimer <= 0) {
 
                 cooldownTimer = delay;

@@ -28,6 +28,7 @@ public class DamageHandlerPlayer : MonoBehaviour {
         if (PlayerHealth <= 0)
         {
             Destroy(gameObject);
+            
         }
         
     }
@@ -40,8 +41,8 @@ public class DamageHandlerPlayer : MonoBehaviour {
             PlayerHit = true;
             StartCoroutine(Explode());
             StartCoroutine(Respawn());
-            
-        
+            ScoreBoard.Score -= 100;
+
     }
 
     private IEnumerator Explode() {
