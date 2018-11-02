@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageHandlerPlayer : MonoBehaviour {
     
@@ -27,8 +28,8 @@ public class DamageHandlerPlayer : MonoBehaviour {
 
         if (PlayerHealth <= 0)
         {
-            Destroy(gameObject);
-            
+            StartCoroutine(Delay());
+            SceneManager.LoadScene("DefeatScene");
         }
         
     }
@@ -91,8 +92,11 @@ public class DamageHandlerPlayer : MonoBehaviour {
 
     }
 
-    
 
+    private IEnumerator Delay() {
+
+        yield return new WaitForSeconds(1.8f);
+    }
 }
 
 

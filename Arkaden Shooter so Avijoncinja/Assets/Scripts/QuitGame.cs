@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraResize : MonoBehaviour {
+public class QuitGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (Input.GetKeyDown(key: KeyCode.Escape)) {
+
+            Application.Quit();
+        }
+
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageHandlerBoss : MonoBehaviour {
 
@@ -40,7 +41,7 @@ public class DamageHandlerBoss : MonoBehaviour {
                 ScoreBoard.Score += 1000;
             }
             RunOnce = false;
-
+            SceneManager.LoadScene("VictoryScene");
         }
 
 

@@ -121,6 +121,7 @@ MonoBehaviour:
   Explosion: {fileID: 1902478472903720, guid: 413fa655c4339e440aec41c7140556d6, type: 2}
   Explosion1: {fileID: 1584193536378352, guid: eda93551808c6e64eae353add8dba0c7, type: 2}
   Explosion2: {fileID: 1892383790075988, guid: d3f1c6778e6bf474183db75efe0fcdc8, type: 2}
+  ScoreEncrease: 100
 --- !u!114 &114389785121605218
 MonoBehaviour:
   m_ObjectHideFlags: 1
