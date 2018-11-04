@@ -23,7 +23,7 @@ public class MoveSpawner : MonoBehaviour {
             Destroy(gameObject);
         }
             LayerMask mask = LayerMask.GetMask("EnemyShootOrNot");
-            RaycastHit2D TurnOrNot = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 50f, mask);
+            RaycastHit2D TurnOrNot = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 5000f, mask);
 
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             

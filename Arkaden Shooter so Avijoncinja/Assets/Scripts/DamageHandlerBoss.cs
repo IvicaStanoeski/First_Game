@@ -41,7 +41,7 @@ public class DamageHandlerBoss : MonoBehaviour {
                 ScoreBoard.Score += 1000;
             }
             RunOnce = false;
-            SceneManager.LoadScene("VictoryScene");
+            
         }
 
 
@@ -75,7 +75,7 @@ public class DamageHandlerBoss : MonoBehaviour {
         GameObject CloneExplosion3 = Instantiate(Explosion3, transform.position + offset4, transform.rotation);
         Destroy(CloneExplosion3, 1f);
         Destroy(gameObject);
-
+        SceneManager.LoadScene("VictoryScene");
         EnemyShooting.StopShoot = true;
     }
 
